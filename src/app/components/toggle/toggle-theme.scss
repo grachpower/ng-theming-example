@@ -1,0 +1,50 @@
+@mixin admin-toggle-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $foreground-base: map-get($foreground, base);
+
+    .admin-toggle-wrapper {
+        color: map-get($background, raised-button);
+
+        &[disabled] {
+            color: map-get($background, disabled-button);
+        }
+    
+        &:not(.active).contrast {
+            color: map-get($foreground, secondary-text);
+
+            &[disabled] {
+                color: map-get($foreground, disabled-button);
+            }
+        }
+
+        &.active {
+            &.mat-primary {
+                color: mat-color($primary, default);
+            }
+            &.mat-accent {
+                color: mat-color($accent, default);
+            }
+            &.mat-warn {
+                color: mat-color($warn, default);
+            }
+          
+            &.mat-primary, &.mat-accent, &.mat-warn, &[disabled] {
+                &[disabled] {
+                    color: mat-color($foreground, disabled-button);
+                }
+            }
+        }
+    }
+
+    .admin-toggle-persistent-ripple {
+        background-color: rgba($foreground-base, 0.1);
+
+        @include cdk-high-contrast {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div
+    class="admin-toggle-ripple"
+    matRipple
+    [matRippleTrigger]="hostElement"
+    [matRippleDisabled]="disabled || disableRipple"
+    [matRippleCentered]="true"
+    [matRippleRadius]="40"
+    aria-hidden="true">
+</div>
+<div class="admin-toggle-persistent-ripple"></div>
+<span class="admin-toggle-content">
+    <ng-content></ng-content>
+</span>
+<input 
+    class="cdk-visually-hidden admin-toggle-input"
+    [checked]="checked"
+    [disabled]="disabled"
+    [name]="name"
+    (change)="change($event)"
+    tabindex="0"
+    type="checkbox" />

@@ -1,0 +1,167 @@
+@import 'debuttonify';
+@import 'rem';
+@import '../../menu-editor-constants.scss';
+
+.tree-node-body {
+    position: relative; // For add-between button after nested table
+    display: flex;
+    flex-direction: column;
+
+    &.expanded {
+        padding-bottom: 16px;
+    }
+
+    .tree-node {
+        flex: none;
+        position: relative; // For cell's add-between button
+
+        &.expanded {
+            margin-bottom: 16px;
+        }
+    }
+
+    .tree-node:hover .rightmost-block,
+    .tree-node:focus-within .rightmost-block {
+        opacity: 1;
+    }
+
+    .rightmost-block {
+        position: absolute;
+        top: 0;
+        right: 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 120ms ease;
+    }
+
+    .expand-button {
+        @include debuttonify;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+
+        // Trigger is nested so we can nest focus selector
+        // See theme for further understanding
+        .ripple-trigger {
+            width: 36px;
+            height: 36px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .expand-icon {
+        transition: 120ms ease;
+
+        &.expanded {
+            transform: rotate(90deg);
+        }
+    }
+
+    .header-block {
+        max-width: 100%;
+        height: $node-block-min-height;
+        flex: 1;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .node-description {
+        @include debuttonify;
+
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 0 16px 0 56px;
+        font-size: rem(16);
+
+        & > :not(:last-child) {
+            margin-right: 8px;
+        }
+
+        & > * {
+            flex: none;
+            text-align: start;
+        }
+    }
+
+    .node-title {
+        margin-right: 8px;
+    }
+
+    .url-label {
+        flex: auto;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .add-between-button {
+        @include debuttonify;
+
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        height: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 120ms ease 80ms;
+        z-index: 1;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
+
+    .divider-line {
+        height: 4px;
+        border-radius: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .divider-badge {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 10px);
+        width: 20px;
+        height: 20px;
+        font-size: rem(20);
+        border-radius: 10px;
+    }
+
+    .children-list {
+        margin-left: 56px;
+        margin-right: 16px;
+        list-style: none;
+        overflow: hidden; // In order to apply border-radius
+        padding: 0;
+        border-radius: 2px;
+    }
+
+    .child-entry {
+        padding: 0;
+        list-style: none;
+    }
+
+    .tree-create-node {
+        display: block;
+        min-height: $edit-block-min-height;
+    }
+}

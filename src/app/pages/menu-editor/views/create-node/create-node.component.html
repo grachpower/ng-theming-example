@@ -1,0 +1,57 @@
+<mat-divider></mat-divider>
+<div 
+    cdkTrapFocus
+    class="create-node-body">
+    <div class="form-block">
+        <div 
+            *ngIf="availabeEntryTypes.length > 1"
+            class="node-container">
+            <mat-button-toggle-group
+                [attr.aria-label]="'menu-editor.create-node.SELECT_NODE_TYPE' | translate"
+                [formControl]="entryTypeControl">
+                <mat-button-toggle
+                    *ngFor="let entryType of availabeEntryTypes" 
+                    [matTooltip]="entryTypeAlias(entryType) | translate"
+                    [value]="entryType">
+                    <mat-icon>
+                        {{ entryTypeIcon(entryType) }}
+                    </mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+
+        <div class="node-container">
+            <ng-container #nodeContainer></ng-container>
+        </div>
+
+        <div class="node-container">
+            <button 
+                [disabled]="!isFormValid()"
+                (click)="formSubmit()"
+                class="editor-control"
+                mat-icon-button
+                color="accent">
+                <mat-icon>check</mat-icon>
+            </button>
+
+            <button 
+                (click)="cancel()"
+                mat-icon-button
+                color="warn"
+                aria-label="Cancel changes">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <button 
+        *ngIf="!node.isNew"
+        [matTooltip]="'menu-editor.create-node.DELETE_NODE' | translate"
+        (click)="deleteCurrentNode()"
+        class="delete-button"
+        mat-icon-button
+        color="warn">
+        <mat-icon>delete_outline</mat-icon>
+    </button>
+</div>
+<mat-divider></mat-divider>

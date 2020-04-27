@@ -1,0 +1,18 @@
+<mat-dialog-content>
+    {{ 'menu-editor.modals.REMOVE_NODE_CONFIRM' | translate }}
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button 
+        [mat-dialog-close]="false"
+        mat-raised-button
+        color="warn">
+        {{ 'menu-editor.modals.NO' | translate }}
+    </button>
+    <button 
+        [mat-dialog-close]="true"
+        mat-raised-button
+        color="primary">
+        {{ 'menu-editor.modals.YES' | translate }}
+    </button>
+</mat-dialog-actions>

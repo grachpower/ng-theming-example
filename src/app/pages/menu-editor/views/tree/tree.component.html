@@ -1,0 +1,50 @@
+<ul 
+    #listElement
+    (cdkDropListDropped)="drop($event)"
+    cdkDropList
+    class="menu-editor-tree" 
+    role="tree">
+    <li>
+        <button
+            [attr.aria-label]="'menu-editor.tree-node.CREATE_CHILD_NODE_A11Y_START' | translate"
+            (click)="insertNode(0)"
+            matRipple
+            class="list-button"> 
+            <mat-icon class="create-node-icon">add</mat-icon>
+            <span>{{ 'menu-editor.tree-node.CREATE_CHILD_NODE' | translate }}</span>
+        </button>
+    </li>
+
+    <li 
+        *ngFor="let node of tree.children; last as isLast;"
+        [cdkDragBoundary]="listElement"
+        (cdkDragStarted)="startDrag()"
+        (cdkDragEnded)="endDrag()"
+        cdkDrag
+        cdkDragLockAxis="y"
+        class="tree-entry">
+        <menu-tree-node 
+            [node]="node"
+            [isLast]="isLast"
+            [parentDragged]="isDraggingChild"
+            (deleteNode)="deleteChildNode($event)"
+            (addSibling)="insertNode($event)"
+            class="tree-item-content">
+        </menu-tree-node>
+        <div
+            *cdkDragPlaceholder 
+            class="custom-tree-placeholder">
+        </div>
+    </li>
+
+    <li>
+        <button 
+            [attr.aria-label]="'menu-editor.tree-node.CREATE_CHILD_NODE_A11Y_END' | translate"
+            (click)="insertNode(tree.children.length)"
+            matRipple
+            class="list-button">
+            <mat-icon class="create-node-icon">add</mat-icon> 
+            <span>{{ 'menu-editor.tree-node.CREATE_CHILD_NODE' | translate }}</span>
+        </button>
+    </li>
+</ul>

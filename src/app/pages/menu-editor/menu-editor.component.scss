@@ -1,0 +1,16 @@
+.menu-editor-body {
+    display: flex;
+    flex-direction: column;
+
+    & > :not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    .editor-control {
+        margin-right: 16px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

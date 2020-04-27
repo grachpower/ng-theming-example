@@ -1,0 +1,35 @@
+<form [formGroup]="form" class="form-container">
+    <div class="control">
+        <mat-form-field appearance="standard">
+            <mat-label>{{ 'menu-editor.node-fields.NAME' | translate }}</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+    </div>
+
+    <div class="control">
+        <mat-form-field appearance="standard">
+            <mat-label>{{ 'menu-editor.node-fields.URL' | translate }}</mat-label>
+            <input matInput formControlName="url">
+        </mat-form-field>
+    </div>
+
+    <div class="control">
+        <admin-toggle 
+            [matTooltip]="'menu-editor.node-fields.IS_BUTTON' | translate"
+            [label]="'menu-editor.node-fields.IS_BUTTON' | translate"
+            [contrast]="true"
+            formControlName="isButton">
+            <mat-icon>link_off</mat-icon>
+        </admin-toggle>
+    </div>
+
+    <div class="control">
+        <admin-toggle 
+            [matTooltip]="'menu-editor.node-fields.IN_NEW_WINDOW' | translate"
+            [label]="'menu-editor.node-fields.IN_NEW_WINDOW' | translate"
+            [contrast]="true"
+            formControlName="inNewWindow">
+            <mat-icon>launch</mat-icon>
+        </admin-toggle>
+    </div>
+</form>

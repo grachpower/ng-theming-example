@@ -1,0 +1,38 @@
+.layout-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .sidenav-block {
+        flex: 1;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    .toolbar-block {
+        display: flex;
+        padding: 0;
+        height: 60px;
+
+        & > * {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // Block purely for setting background app. We could not set it
+    // on child (because of its margins) or parent (because those are
+    // material components, which styles should not be overlapped)
+    .background-wrapper {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        transition: background-color 120ms ease;
+    }
+
+    .main-content-block {
+        width: 100%;
+        transition: margin 120ms ease;
+        overflow-x: hidden;
+    }
+}

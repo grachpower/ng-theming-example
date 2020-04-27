@@ -1,0 +1,74 @@
+{
+    "login-page": {
+        "TITLE": "Para continuar, faça login no sistema",
+        "EMAIL": "E-mail",
+        "PASSWORD": "Palavra-passe",
+        "LOG_IN": "Login",
+        "AUTHORIZATION": "A autorização",
+        "LOGIN_ERROR": "Algo deu errado, verifique os dados inseridos",
+        "ENTER": "Log in"
+    },
+    "header-component": {
+        "LOG_OUT": "Sair"
+    },
+    "sidenav-menu": {
+        "MENU_EDITOR": "O editor de menus"
+    },
+    "menu-editor": {
+        "controls": {
+            "SAVE": "Manter",
+            "DECLINE_CHANGES": "Rejeitar alterações"
+        },
+        "modals": {
+            "ARE_YOU_SURE_CONFIRM": "Você tem certeza de que deseja aplicar as alterações?",
+            "ARE_YOU_SURE_DECLINE": "Você tem certeza de que deseja rejeitar todas as alterações?",
+            "YES": "Sim",
+            "NO": "Não",
+            "REMOVE_NODE_CONFIRM": "Você tem certeza de que deseja remover a unidade"
+        },
+        "entry-types": {
+            "FIRST_LEVEL": "o primeiro nível de",
+            "SECOND_LEVEL": "o segundo nível de",
+            "SECOND_LEVEL_LINK": "o segundo nível de referência",
+            "LINK_BLOCK": "um bloco de links",
+            "HIGHLIGHTED_LINK": "o link com a atribuição de",
+            "LINK": "referência",
+            "BANNER": "bandeira",
+            "WIDE_BANNER": "uma grande bandeira",
+            "OPERATOR_LINK": "link para o feed do operador"
+        },
+        "fist-level": {
+            "headers": {
+                "WOMEN": "Feminino",
+                "MEN": "Masculino",
+                "CHILDREN": "Infantil"
+            }
+        },
+        "tree-node": {
+            "EDIT_NODE": "Para alterar o bloco de",
+            "CREATE_CHILD_NODE": "Adicionar categoria",
+            "CREATE_CHILD_NODE_A11Y_START": "Adicione uma categoria ao começo",
+            "CREATE_CHILD_NODE_A11Y_END": "Adicionar categoria ao final",
+            "CLICK_TO_EDIT": "Clique para editar",
+            "EXPAND_MORE": "Implantar",
+            "EXPAND_LESS": "Minimizar",
+            "ADD_SIBLING": "Adicionar o bloco inferior",
+            "CHILDREN_COUNT": "número de filhos",
+            "OPERATOR_LINK": "Fita de operador móvel",
+            "BLOCK_WITHOUT_TITLE": "Bloco sem título"
+        },
+        "create-node": {
+            "SELECT_NODE_TYPE": "Tipo de bloco",
+            "DELETE_NODE": "Excluir bloco"
+        },
+        "node-fields": {
+            "NAME": "Nome do bloco",
+            "GENDER": "Chão",
+            "URL": "Url",
+            "COLORED": "Iluminado",
+            "IMAGE_URL": "Url da imagem",
+            "IS_BUTTON": "Fazer o botão direito",
+            "IN_NEW_WINDOW": "Abrir em uma janela separada"
+        }
+    }
+}

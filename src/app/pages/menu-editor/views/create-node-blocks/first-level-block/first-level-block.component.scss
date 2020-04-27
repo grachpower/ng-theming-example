@@ -1,0 +1,12 @@
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.control {
+    margin-right: 16px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}

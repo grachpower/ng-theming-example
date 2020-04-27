@@ -1,0 +1,6 @@
+// We need to push one specifity up to override material typography
+body .mat-typography {
+    .mat-display-2 {
+        margin-bottom: 32px;
+    }
+}

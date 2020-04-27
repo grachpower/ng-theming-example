@@ -1,0 +1,74 @@
+{
+    "login-page": {
+        "TITLE": "Для продолжения работы, войдите в систему",
+        "EMAIL": "E-mail",
+        "PASSWORD": "Пароль",
+        "LOG_IN": "Логин",
+        "AUTHORIZATION": "Авторизация",
+        "LOGIN_ERROR": "Что-то пошло не так, проверьте введенные данные",
+        "ENTER": "Войти"
+    },
+    "header-component": {
+        "LOG_OUT": "Выйти"
+    },
+    "sidenav-menu": {
+        "MENU_EDITOR": "Редактор меню"
+    },
+    "menu-editor": {
+        "controls": {
+            "SAVE": "Сохранить",
+            "DECLINE_CHANGES": "Отклонить изменения"
+        },
+        "modals": {
+            "ARE_YOU_SURE_CONFIRM": "Вы уверены что хотите применить изменения?",
+            "ARE_YOU_SURE_DECLINE": "Вы уверены что хотите отклонить все изменения?",
+            "YES": "Да",
+            "NO": "Нет",
+            "REMOVE_NODE_CONFIRM": "Вы уверены что хотите удалить блок"
+        },
+        "entry-types": {
+            "FIRST_LEVEL": "Первый уровень",
+            "SECOND_LEVEL": "Второй уровень",
+            "SECOND_LEVEL_LINK": "Второй уровень с ссылкой",
+            "LINK_BLOCK": "Блок ссылок",
+            "HIGHLIGHTED_LINK": "Ссылка с выделением",
+            "LINK": "Ссылка",
+            "BANNER": "Баннер",
+            "WIDE_BANNER": "Широкий баннер",
+            "OPERATOR_LINK": "Ссылка на фид оператора"
+        },
+        "fist-level": {
+            "headers": {
+                "WOMEN": "Женское",
+                "MEN": "Мужское",
+                "CHILDREN": "Детское"
+            }
+        },
+        "tree-node": {
+            "EDIT_NODE": "Изменить блок",
+            "CREATE_CHILD_NODE": "Добавить категорию",
+            "CREATE_CHILD_NODE_A11Y_START": "Добавить категорию в начало",
+            "CREATE_CHILD_NODE_A11Y_END": "Добавить категорию в конец",
+            "CLICK_TO_EDIT": "Нажмите чтобы редактировать",
+            "EXPAND_MORE": "Развернуть",
+            "EXPAND_LESS": "Свернуть",
+            "ADD_SIBLING": "Добавить блок снизу",
+            "CHILDREN_COUNT": "содержит",
+            "OPERATOR_LINK": "Операторский фид",
+            "BLOCK_WITHOUT_TITLE": "Блок без заголовка"
+        },
+        "create-node": {
+            "SELECT_NODE_TYPE": "Тип контента",
+            "DELETE_NODE": "Удалить блок"
+        },
+        "node-fields": {
+            "NAME": "Имя блока",
+            "GENDER": "Пол",
+            "URL": "Ссылка",
+            "COLORED": "Подсвеченный",
+            "IMAGE_URL": "Ссылка картинки",
+            "IS_BUTTON": "Сделать кнопкой",
+            "IN_NEW_WINDOW": "Открывать в отдельном окне"
+        }
+    }
+}

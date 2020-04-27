@@ -1,0 +1,15 @@
+<a 
+    mat-list-item
+    [routerLink]="linkUrl"
+    (click)="emitNavigation()"
+    class="side-menu-link global-side-menu-link"
+    routerLinkActive="active">
+    <p class="link-content">
+        <mat-icon *ngIf="hasIcon">
+            {{iconName}}
+        </mat-icon>
+        <span>
+            {{linkTitle | translate}}
+        </span>
+    </p>
+</a>

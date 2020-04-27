@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+@import '../../menu-editor-constants.scss';
+
+// Styles to define drag. We separate styles for different purposes
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.tree-entry.cdk-drag-preview .tree-item-content {
+    @include mat-elevation(8);
+}
+
+.tree-entry.cdk-drag-preview, .cdk-drop-list-dragging {
+    list-style: none;
+
+    .tree-item-content {
+        display: block;
+        overflow: hidden;
+
+        &.node-edited {
+            max-height: $edit-block-min-height;
+        }
+    
+        &:not(.node-edited) {
+            max-height: $node-block-min-height;
+        }
+    }
+}
+  
+.menu-editor-tree {
+    &.cdk-drop-list-dragging .tree-entry:not(.cdk-drag-placeholder) {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    .custom-tree-placeholder.cdk-drag-placeholder {
+        height: $node-block-min-height;
+        width: 100%;
+        opacity: 0;
+    }
+}
+

@@ -1,0 +1,160 @@
+<div 
+    [attr.role]="nodeRole"
+    [attr.aria-expanded]="isExpanded"
+    [attr.aria-level]="node.level"
+    [ngClass]="appendedClasses"
+    class="mat-typography tree-node-body">
+    <div 
+        [class.expanded]="isExpanded"
+        class="tree-node">
+        <button
+            *ngIf="nodeCanContainChildren"
+            #expandButton
+            [attr.aria-label]="'menu-editor.tree-node.EXPAND_LESS' | translate"
+            (click)="toggleNodeExpand()"
+            class="expand-button">
+            <div
+                [matRippleTrigger]="expandButton"
+                matRipple
+                class="ripple-trigger">
+                <mat-icon 
+                    [class.expanded]="isExpanded"
+                    class="expand-icon">
+                    chevron_right
+                </mat-icon>
+            </div>
+        </button>
+
+        <div
+            *ngIf="shouldShowNodeContent(); else editContentTemplate;" 
+            class="header-block">
+            <button 
+                [class.expandable]="isExpanded"
+                (click)="makeNodeEditable()"
+                [matTooltip]="'menu-editor.tree-node.CLICK_TO_EDIT' | translate"
+                [class.dragged]="parentDragged"
+                matTooltipShowDelay="1600"
+                matRipple
+                class="node-description">
+                <span
+                    *ngIf="hasNodeTitle"
+                    class="node-title">
+                    {{node.value.name}}
+                </span>
+
+                <i
+                    *ngIf="!hasNodeTitle && isOperatorLink"
+                    class="node-title">
+                    {{ 'menu-editor.tree-node.OPERATOR_LINK' | translate }}
+                </i>
+
+                <i
+                    *ngIf="!hasNodeTitle && !isOperatorLink"
+                    class="node-title">
+                    {{ 'menu-editor.tree-node.BLOCK_WITHOUT_TITLE' | translate }}
+                </i>
+
+                <span 
+                    *ngIf="nodeCanContainChildren"
+                    class="mat-caption">
+                    {{ 'menu-editor.tree-node.CHILDREN_COUNT' | translate }}: {{ node.children.length }}
+                </span>
+
+                <span 
+                    *ngIf="hasUrl"
+                    class="mat-caption url-label">
+                    {{url}}
+                </span>
+            </button>
+        </div>
+
+        <div
+            *ngIf="!parentDragged && !isEditing" 
+            class="rightmost-block">
+            <button
+                *ngIf="nodeCanContainChildren"
+                (click)="toggleRecursiveExpand()"
+                mat-icon-button>
+                <mat-icon>{{expandIcon}}</mat-icon>
+            </button>
+        </div>
+
+        <button
+            *ngIf="!isLast && !parentDragged" 
+            [attr.aria-label]="'menu-editor.tree-node.ADD_SIBLING' | translate"
+            (click)="appendSibling($event)"
+            class="add-between-button">
+            <div class="divider-line"></div>
+            <mat-icon class="divider-badge">add</mat-icon>
+        </button>
+    </div>
+    <ul 
+        #listElement
+        *ngIf="isExpanded"
+        (cdkDropListDropped)="drop($event)"
+        cdkDropList
+        class="children-list level-{{node.level + 1}}">
+        <li>
+            <button
+                [attr.aria-label]="'menu-editor.tree-node.CREATE_CHILD_NODE_A11Y_START' | translate"
+                (click)="insertNode(0)"
+                matRipple
+                class="list-button"> 
+                <mat-icon class="create-node-icon">add</mat-icon>
+                <span>{{ 'menu-editor.tree-node.CREATE_CHILD_NODE' | translate }}</span>
+            </button>
+        </li>
+
+        <li 
+            *ngFor="let child of node.children; last as isLast;"
+            [cdkDragBoundary]="listElement"
+            (cdkDragStarted)="startDrag()"
+            (cdkDragEnded)="endDrag()"
+            cdkDrag
+            cdkDragLockAxis="y"
+            class="child-entry">
+            <menu-tree-node
+                [node]="child"
+                [isLast]="isLast"
+                [parentDragged]="isDraggingChild"
+                (deleteNode)="deleteChildNode($event)"
+                (addSibling)="handleAppendSibling($event)"
+                class="tree-node-content">
+            </menu-tree-node>
+            <div
+                *cdkDragPlaceholder 
+                class="custom-placeholder">
+            </div>
+        </li>
+
+        <li *ngIf="node.children.length > 1">
+            <button 
+                [attr.aria-label]="'menu-editor.tree-node.CREATE_CHILD_NODE_A11Y_END' | translate"
+                (click)="insertNode(node.children.length)"
+                matRipple
+                class="list-button">
+                <mat-icon class="create-node-icon">add</mat-icon> 
+                <span>{{ 'menu-editor.tree-node.CREATE_CHILD_NODE' | translate }}</span>
+            </button>
+        </li>
+    </ul>
+
+    <button
+        *ngIf="!isLast && isExpanded && !parentDragged" 
+        [attr.aria-label]="'menu-editor.tree-node.ADD_SIBLING' | translate"
+        (click)="appendSibling($event)"
+        class="add-between-button">
+        <div class="divider-line"></div>
+        <mat-icon class="divider-badge">add</mat-icon>
+    </button>
+</div>
+
+<ng-template #editContentTemplate>
+    <admin-create-node 
+        [node]="node"
+        (cancelNodeCreation)="cancelNodeCreation()"
+        (deleteNode)="emitNodeDelete()"
+        (nodeChange)="nodeChanged($event)"
+        class="tree-create-node level-{{node.level}}">
+    </admin-create-node>
+</ng-template>

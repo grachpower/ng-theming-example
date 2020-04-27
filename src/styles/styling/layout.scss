@@ -1,0 +1,24 @@
+$side-menu-width: 200px;
+$main-content-top-margin: 24px;
+$main-content-side-margin: 64px;
+
+.global-main-container {
+    padding: #{$main-content-top-margin} #{$main-content-side-margin};
+
+    @media (max-width: 767px) {
+        $main-content-top-margin: 16px;
+        padding: #{$main-content-top-margin} 0 0 0;
+    }
+}
+
+.global-large-container {
+    max-width: 1000px;
+}
+
+.global-mid-container {
+    max-width: 767px;
+}
+
+.global-small-container {
+    max-width: 360px;
+}

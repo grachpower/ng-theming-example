@@ -1,0 +1,16 @@
+.side-menu-link {
+    background-color: transparent;
+    transition-property: background-color, color;
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-duration: 250ms;
+
+    .link-content {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    
+        & > :not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+}

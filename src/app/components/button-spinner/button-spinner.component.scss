@@ -1,0 +1,8 @@
+:host {
+    display: inline-block;
+    align-self: center;
+}
+
+:host(:not([no-margin])) {
+    margin-left: 8px;
+}

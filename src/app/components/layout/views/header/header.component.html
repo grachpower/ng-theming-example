@@ -1,0 +1,28 @@
+<header class="header-block">
+    <button
+        (click)="toggleSidenav()"
+        mat-icon-button
+        class="sidenav-button"
+        matRippleColor="#ffffff1a"
+        *ngIf="isMobile$ | async">
+        <ng-container *ngIf="sidenavOpened; then closeIconTemplate; else menuIconTemplate;"></ng-container>
+    </button>
+    <h1 class="title-label">
+        {{title$ | async}}
+    </h1>
+
+    <admin-toggle
+        [formControl]="darkThemeControl"
+        [activeRipple]="false"
+        (click)="toggleTheme()">
+        <mat-icon class="moon-icon">brightness_2</mat-icon>
+    </admin-toggle>
+</header>
+
+<ng-template #closeIconTemplate>
+    <mat-icon>close</mat-icon>
+</ng-template>
+
+<ng-template #menuIconTemplate>
+    <mat-icon>menu</mat-icon>
+</ng-template>

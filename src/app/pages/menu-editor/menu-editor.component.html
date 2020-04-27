@@ -1,0 +1,59 @@
+<div class="mat-typography global-large-container menu-editor-body">
+    <div class="editor-content">
+        <menu-tree [tree]="treeData$ | async"></menu-tree>
+    </div>
+
+    <div class="controls">
+        <button 
+            (click)="confirm()"
+            class="editor-control"
+            mat-raised-button
+            color="primary">
+            <mat-icon>save</mat-icon>
+            {{ 'menu-editor.controls.SAVE' | translate }}
+        </button>
+        <button
+            (click)="cancel()"
+            mat-button
+            color="warn">
+            <mat-icon>restore</mat-icon>
+            {{ 'menu-editor.controls.DECLINE_CHANGES' | translate }}
+        </button>
+    </div>
+</div>
+
+<ng-template #confirmModal>
+    <mat-dialog-content>{{ 'menu-editor.modals.ARE_YOU_SURE_CONFIRM' | translate }}</mat-dialog-content>
+    <mat-dialog-actions>
+        <button 
+            [mat-dialog-close]="false"
+            mat-raised-button 
+            color="warn">
+            {{ 'menu-editor.modals.NO' | translate }}
+        </button>
+        <button 
+            [mat-dialog-close]="true"
+            mat-raised-button 
+            color="primary">
+            {{ 'menu-editor.modals.YES' | translate }}
+        </button>
+    </mat-dialog-actions>
+</ng-template>
+
+<ng-template #declineModal>
+    <mat-dialog-content>{{ 'menu-editor.modals.ARE_YOU_SURE_DECLINE' | translate }}</mat-dialog-content>
+    <mat-dialog-actions>
+        <button 
+            [mat-dialog-close]="false"
+            mat-raised-button 
+            color="warn">
+            {{ 'menu-editor.modals.NO' | translate }}
+        </button>
+        <button 
+            [mat-dialog-close]="true"
+            mat-raised-button 
+            color="primary">
+            {{ 'menu-editor.modals.YES' | translate }}
+        </button>
+    </mat-dialog-actions>
+</ng-template>

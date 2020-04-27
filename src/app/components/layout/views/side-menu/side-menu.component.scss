@@ -1,0 +1,34 @@
+@import 'rem';
+@import 'delinkify';
+@import 'layout';
+
+.side-menu-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .side-menu-nav-block {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: $side-menu-width;
+    }
+    
+    .side-menu-logo {
+        @include delinkify();
+
+        font-size: rem(34);
+    }
+    
+    .top-categories {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        margin-bottom: auto;
+
+        & > :not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+}

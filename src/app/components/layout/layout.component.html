@@ -1,0 +1,25 @@
+<div class="layout-body">
+    <mat-toolbar class="toolbar-block">
+        <admin-header
+            [sidenavOpened]="sidenavOpenedOnMobile$ | async"
+            (openSidenav)="openSidenav()"
+            (closeSidenav)="closeSidenav()">
+        </admin-header>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenav-block">
+        <mat-sidenav 
+            [opened]="sidenavOpened$ | async" 
+            [mode]="sidenavModeChanges$ | async"
+            (closedStart)="closeSidenav()"
+            role="navigation">
+            <side-menu (ngNavigate)="closeSidenav()"></side-menu>
+        </mat-sidenav>
+        <mat-sidenav-content role="main">
+            <div class="background-wrapper">
+                <main class="main-content-block global-main-container">
+                    <ng-content></ng-content>
+                </main>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

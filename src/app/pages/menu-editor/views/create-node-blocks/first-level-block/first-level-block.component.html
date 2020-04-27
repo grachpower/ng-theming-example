@@ -1,0 +1,19 @@
+<form [formGroup]="form" class="form-container">
+    <div class="control">
+        <mat-form-field appearance="standard">
+            <mat-label>{{ 'menu-editor.node-fields.NAME' | translate }}</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+    </div>
+
+    <div class="control">
+        <mat-form-field appearance="standard">
+            <mat-label>{{ 'menu-editor.node-fields.GENDER' | translate }}</mat-label>
+            <mat-select formControlName="gender">
+                <mat-option *ngFor="let gender of genders" [value]="gender">
+                    {{ getGenderAlias(gender) | translate }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</form>

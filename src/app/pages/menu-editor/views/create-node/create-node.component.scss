@@ -1,0 +1,29 @@
+.create-node-body {
+    box-sizing: border-box;
+    display: flex;
+    align-items: baseline;
+    min-height: 86px;
+    flex-wrap: nowrap;
+    padding: 8px 24px 8px 56px;
+
+    .form-block {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        margin-right: auto;
+
+        & > :not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+    .node-container {
+        & > :not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+    .delete-button {
+        margin-left: auto;
+    }
+}

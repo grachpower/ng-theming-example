@@ -1,0 +1,10 @@
+<div class="side-menu-body">
+    <mat-nav-list class="side-menu-nav-block">
+        <side-menu-link
+            *ngFor="let link of (sideMenuContent$ | async)"
+            [link]="link"
+            (ngNavigate)="emitNavigation()"
+            class="categories-block">
+        </side-menu-link>
+    </mat-nav-list>
+</div>
