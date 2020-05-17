@@ -1,13 +1,13 @@
 .form-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .control {
-    margin-right: 16px;
+  margin-right: 16px;
 
-    &:last-of-type {
-        margin-right: 0;
-    }
+  &:last-of-type {
+    margin-right: 0;
+  }
 }

@@ -1,19 +1,19 @@
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    font-family: Roboto, sans-serif;
-	color: rgba(0, 0, 0, 0.87);
-    margin: 0;
-    line-height: 16px;
-    font-size: 16px;
+  height: 100%;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .mat-raised-button mat-icon:first-child,
 .mat-button mat-icon:first-child {
-    margin-right: 4px;
-    margin-top: -3px;
+  margin-top: -3px;
+  margin-right: 4px;
 }

@@ -1,15 +1,14 @@
 @mixin admin-layout-theme($theme) {
-    $primary: map-get($theme, primary);
-    $is-dark: map-get($theme, is-dark);
+  $primary: map-get($theme, primary);
+  $is-dark: map-get($theme, is-dark);
 
-    .layout-body {
-        .toolbar-block {
-            background-color: mat-color($primary, if($is-dark, 800, darker));
-        }
-
-        .background-wrapper {
-            background-color: if($is-dark, $dark-background, $light-background);
-        }
+  .layout-body {
+    .toolbar-block {
+      background-color: mat-color($primary, if($is-dark, 800, darker));
     }
 
+    .background-wrapper {
+      background-color: if($is-dark, $dark-background, $light-background);
+    }
+  }
 }

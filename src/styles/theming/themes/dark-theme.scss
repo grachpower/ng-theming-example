@@ -1,11 +1,11 @@
 @import '../theming.scss';
 
 .dark-theme {
-    $theme: mat-dark-theme($primary, $accent, $warn);
-    @include angular-material-theme($theme);
-    @include admin-theme($theme);
+  $theme: mat-dark-theme($primary, $accent, $warn);
+  @include angular-material-theme($theme);
+  @include admin-theme($theme);
 
-    .cdk-overlay-dark-backdrop {
-        background: rgba(0, 0, 0, 0.6);
-    }
+  .cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
 }

@@ -1,20 +1,20 @@
 @mixin admin-side-menu-link-theme($theme) {
-    $is-dark: map-get($theme, is-dark);
-    $primary: map-get($theme, primary);
-    $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
 
-    .side-menu-link {
-        &.active {
-            $color-light: mat-color($primary, 900);
-            $color-dark: mat-color($primary, 100);
+  .side-menu-link {
+    &.active {
+      $color-light: mat-color($primary, 900);
+      $color-dark: mat-color($primary, 100);
 
-            background-color: mat-color($foreground, base, if($is-dark, 0.1, 0.04));
-            color: if($is-dark, $color-dark, $color-light);
+      background-color: mat-color($foreground, base, if($is-dark, 0.1, 0.04));
+      color: if($is-dark, $color-dark, $color-light);
 
-            &:hover,
-            &:focus {
-                background-color: mat-color($foreground, base, if($is-dark, 0.16, 0.1));
-            }
-        }
+      &:hover,
+      &:focus {
+        background-color: mat-color($foreground, base, if($is-dark, 0.16, 0.1));
+      }
     }
+  }
 }
