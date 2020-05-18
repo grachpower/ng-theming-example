@@ -39,7 +39,7 @@
   transform: none;
 
   .admin-toggle-wrapper.active.active-ripple:not(:hover):not(.cdk-focused):not(.disabled) & {
-    opacity: 0.6;
+    opacity: .6;
   }
 
   .admin-toggle-wrapper:not(.disabled).cdk-focused &,

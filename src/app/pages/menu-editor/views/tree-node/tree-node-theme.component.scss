@@ -10,7 +10,7 @@
       &:hover,
       &:focus {
         .ripple-trigger {
-          background: rgba($foreground-base, 0.12);
+          background: rgba($foreground-base, .12);
         }
       }
     }
@@ -21,7 +21,7 @@
       &:not(.dragged) {
         &:hover,
         &:focus {
-          background: rgba($foreground-base, 0.12);
+          background: rgba($foreground-base, .12);
         }
       }
     }

@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --codeCoverage=true",
-    "lint": "ng lint",
+    "lint": "ng lint && stylelint --fix src/**/*.scss",
     "e2e": "ng e2e",
     "build:prod": "ng build --configuration=production"
   },

@@ -30,7 +30,6 @@ Styles are presented by this logical groups:
   }
 }
 ```
-* Separate visual look (skin) and layout (structure) with different semantic classes in modules
 * Use **submodules** if part of component can be reused but there is no need to extract it to separate component currently
 * To customize styles from external components with `Encapsulation.None` (for example with name `.external-module`) place `external-module.overrides` near component which needs this overrides. Prefix overrides with component's selector and include this overrides into global styles file
 

@@ -44,7 +44,7 @@
   }
 
   .admin-toggle-persistent-ripple {
-    background-color: rgba($foreground-base, 0.1);
+    background-color: rgba($foreground-base, .1);
 
     @include cdk-high-contrast {
       display: none;
