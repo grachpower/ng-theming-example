@@ -52,11 +52,11 @@ DO NOT:
 
 DO:
 * Prefer `@extend` over mixins to add common styling with no parameters (mixins cause code duplicates in resulting css)
-* Use `!default` for rules which can possibly be customized in `Encapsulation.None` components
+* Use [`!default`](https://sass-lang.com/documentation/variables#default-values) for rules which can be customized in `Encapsulation.None` components ([see bootstrap variables for examples](https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss))
 * Keep in mind that `Encapsulation.None` components can affect all elements on the page. Style such components under their module namespace (ex: `.page-title &__lead`).
+* use _ to separate elements in block `.list_header` to prevent styles to fall through current component down or just append to original name `.list`, `.list-title`, `.list-header`
 
 
 TODO:
 * modifiers or state variants - 15deg rotation, 20deg rotation for some elements
 * utilities (used for clearfixes, some layout styles, common color patters for background for example) maybe we don't need such entity as the same can be done by mixins/extends or be picked from existing group like layout
-* use __ to separate elements in block or just append to original name .list, .list-title, .list-header?
