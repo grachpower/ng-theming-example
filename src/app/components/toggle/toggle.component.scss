@@ -1,49 +1,49 @@
 .admin-toggle-wrapper {
-    position: relative;
-    border-radius: 20px;
-    display: inline-block;
-    vertical-align: baseline;
-    text-align: center;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    transition: color 150ms ease;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: color 150ms ease;
+  vertical-align: baseline;
 
-    .admin-toggle-ripple {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
-        z-index: 1;
-    }
+  .admin-toggle-ripple {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
 }
 
 .admin-toggle-content {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 8px;
+  display: inline-block;
+  padding: 8px;
+  vertical-align: middle;
 }
 
 .admin-toggle-persistent-ripple {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    opacity: 0;
-    transform: none;
-    pointer-events: none;
-    -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-tap-highlight-color: transparent;
+  transform: none;
 
-    .admin-toggle-wrapper.active.active-ripple:not(:hover):not(.cdk-focused):not(.disabled) & {
-        opacity: 0.6;
-    }
-    
-    .admin-toggle-wrapper:not(.disabled).cdk-focused &,
-    .admin-toggle-wrapper:hover & {
-        opacity: 1;
-    }
+  .admin-toggle-wrapper.active.active-ripple:not(:hover):not(.cdk-focused):not(.disabled) & {
+    opacity: .6;
+  }
+
+  .admin-toggle-wrapper:not(.disabled).cdk-focused &,
+  .admin-toggle-wrapper:hover & {
+    opacity: 1;
+  }
 }

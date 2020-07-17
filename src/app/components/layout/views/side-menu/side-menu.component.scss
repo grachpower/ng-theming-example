@@ -3,32 +3,31 @@
 @import 'layout';
 
 .side-menu-body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .side-menu-nav-block {
+    display: flex;
+    width: $side-menu-width;
+    height: 100%;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .side-menu-logo {
+    font-size: rem(34);
+    @include delinkify();
+  }
+
+  .top-categories {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    margin-top: 24px;
+    margin-bottom: auto;
 
-    .side-menu-nav-block {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        width: $side-menu-width;
+    & > :not(:last-child) {
+      margin-bottom: 24px;
     }
-    
-    .side-menu-logo {
-        @include delinkify();
-
-        font-size: rem(34);
-    }
-    
-    .top-categories {
-        display: flex;
-        flex-direction: column;
-        margin-top: 24px;
-        margin-bottom: auto;
-
-        & > :not(:last-child) {
-            margin-bottom: 24px;
-        }
-    }
+  }
 }

@@ -4,39 +4,39 @@
 // Styles to define drag, since main styles are too big to fit something into them
 
 .cdk-drag-animating {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0, 0, .2, 1);
 }
 
 .child-entry.cdk-drag-preview .tree-node-content {
-    @include mat-elevation(8);
+  @include mat-elevation(8);
 }
 
-.child-entry.cdk-drag-preview, .cdk-drop-list-dragging {
-    list-style: none;
+.child-entry.cdk-drag-preview,
+.cdk-drop-list-dragging {
+  list-style: none;
 
-    .tree-node-content {
-        display: block;
-        overflow: hidden;
+  .tree-node-content {
+    display: block;
+    overflow: hidden;
 
-        &.node-edited {
-            max-height: $edit-block-min-height;
-        }
-    
-        &:not(.node-edited) {
-            max-height: $node-block-min-height;
-        }
+    &.node-edited {
+      max-height: $edit-block-min-height;
     }
+
+    &:not(.node-edited) {
+      max-height: $node-block-min-height;
+    }
+  }
 }
-  
+
 .tree-node-body {
-    .children-list.cdk-drop-list-dragging .child-entry:not(.cdk-drag-placeholder) {
-        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-    }
+  .children-list.cdk-drop-list-dragging .child-entry:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, .2, 1);
+  }
 
-    .custom-placeholder.cdk-drag-placeholder {
-        height: $node-block-min-height;
-        width: 100%;
-        opacity: 0;
-    }
+  .custom-placeholder.cdk-drag-placeholder {
+    width: 100%;
+    height: $node-block-min-height;
+    opacity: 0;
+  }
 }
-

@@ -1,7 +1,7 @@
 @import '../theming.scss';
 
 .light-theme {
-    $theme: mat-light-theme($primary, $accent, $warn);
-    @include angular-material-theme($theme);
-    @include admin-theme($theme);
+  $theme: mat-light-theme($primary, $accent, $warn);
+  @include angular-material-theme($theme);
+  @include admin-theme($theme);
 }

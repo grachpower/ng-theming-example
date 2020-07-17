@@ -1,0 +1,30 @@
+extends:
+  - stylelint-config-airbnb
+  - stylelint-config-idiomatic-order
+  - stylelint-prettier/recommended
+plugins:
+  - stylelint-order
+  - stylelint-scss
+rules:
+  no-unknown-animations: true
+  max-nesting-depth:
+    - 3
+    - ignore:
+        - blockless-at-rules
+        - pseudo-classes
+  font-weight-notation: numeric
+  declaration-block-no-redundant-longhand-properties: true
+  declaration-block-no-duplicate-properties: true
+  declaration-no-important: true
+#  selector-max-compound-selectors: 2
+  selector-max-id: 1
+  selector-max-empty-lines: 1
+#  selector-max-specificity and max-type: RFC
+#  selector-nested-pattern:
+  selector-class-pattern:
+    - "^[a-z][a-z0-9-]" # allow only start of text without leading -, or __ or --
+    - resolveNestedSelectors: true
+  number-leading-zero: never
+  number-no-trailing-zeros: true
+  string-quotes: single
+

@@ -1,27 +1,24 @@
 @import '~@angular/material/theming';
 
 @mixin admin-tree-theme($theme) {
-    $primary: map-get($theme, primary);
-    $background: map-get($theme, background);
-    $card-background: mat-color($background, card);
-    $is-dark: map-get($theme, is-dark);
+  .menu-editor-tree {
+    background: $card-background;
+    @include mat-elevation(2);
 
-    .menu-editor-tree {
-        @include mat-elevation(2);
+    .list-button {
+      background: mat-color($primary, $hue);
+      outline: none;
 
-        background: $card-background;
-
-        .list-button {
-            $hue: if($is-dark, 600, 50);
-
-            background: mat-color($primary, $hue);
-            outline: none;
-
-            &:hover,
-            &:focus {
-                $hue: if($is-dark, 700, 100);
-                background: mat-color($primary, $hue);
-            }
-        }
+      &:hover,
+      &:focus {
+        background: mat-color($primary, $hue);
+        $hue: if($is-dark, 700, 100);
+      }
+      $hue: if($is-dark, 600, 50);
     }
+  }
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $card-background: mat-color($background, card);
+  $is-dark: map-get($theme, is-dark);
 }

@@ -1,79 +1,76 @@
 @import '~@angular/material/theming';
 
 @mixin admin-tree-node-theme($theme) {
-    $accent: map-get($theme, accent);
-    $is-dark: map-get($theme, is-dark);
-    $foreground: map-get($theme, foreground);
-    $background: map-get($theme, background);
-    $card-background: mat-color($background, card);
-    $foreground-base: map-get($foreground, base);
+  .tree-node-body {
+    color: map-get($foreground, text);
 
-    .tree-node-body {
-        color: map-get($foreground, text);
+    .expand-button {
+      outline: none;
 
-        .expand-button {
-            outline: none;
-
-            &:hover,
-            &:focus {
-                .ripple-trigger {
-                    background: rgba($foreground-base, 0.12);
-                }
-            }
+      &:hover,
+      &:focus {
+        .ripple-trigger {
+          background: rgba($foreground-base, .12);
         }
-
-        .node-description {
-            outline: none;
-
-            &:not(.dragged) {
-                &:hover,
-                &:focus {
-                    background: rgba($foreground-base, 0.12);
-                }
-            }
-        }
-
-        .add-between-button {
-            outline: none;
-
-            &:focus {
-                .divider-badge {
-                    background: mat-color($accent, default);
-                }
-            }
-        }
-
-        .divider-line {
-            @include mat-elevation(8, mat-color($accent, 400));
-
-            background: mat-color($accent, 400);
-        }
-
-        .divider-badge {
-            @include mat-elevation(8, mat-color($accent, 400));
-
-            background: mat-color($accent, 400);
-            color: mat-color($accent, darker-contrast);
-        }
-
-        .children-list {
-            @include mat-elevation(2);
-
-            &.level-0 {
-                background: $card-background;
-            }
-        
-            &.level-1 {
-                background: if($is-dark, lighten($card-background, 5%), darken($card-background, 5%));
-            }
-        
-            &.level-2 {
-                background: if($is-dark, lighten($card-background, 10%), darken($card-background, 10%));
-            }
-        
-            &.level-3 {
-                background: if($is-dark, lighten($card-background, 15%), darken($card-background, 15%));
-            }
-        }
+      }
     }
+
+    .node-description {
+      outline: none;
+
+      &:not(.dragged) {
+        &:hover,
+        &:focus {
+          background: rgba($foreground-base, .12);
+        }
+      }
+    }
+
+    .add-between-button {
+      outline: none;
+
+      &:focus {
+        .divider-badge {
+          background: mat-color($accent, default);
+        }
+      }
+    }
+
+    .divider-line {
+      background: mat-color($accent, 400);
+      @include mat-elevation(8, mat-color($accent, 400));
+    }
+
+    .divider-badge {
+      background: mat-color($accent, 400);
+      color: mat-color($accent, darker-contrast);
+      @include mat-elevation(8, mat-color($accent, 400));
+    }
+
+    .children-list {
+      @include mat-elevation(2);
+
+      &.level-0 {
+        background: $card-background;
+      }
+
+      &.level-1 {
+        background: if($is-dark, lighten($card-background, 5%), darken($card-background, 5%));
+      }
+
+      &.level-2 {
+        background: if($is-dark, lighten($card-background, 10%), darken($card-background, 10%));
+      }
+
+      &.level-3 {
+        background: if($is-dark, lighten($card-background, 15%), darken($card-background, 15%));
+      }
+    }
+  }
+  $accent: map-get($theme, accent);
+  $is-dark: map-get($theme, is-dark);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $card-background: mat-color($background, card);
+  $foreground-base: map-get($foreground, base);
 }
